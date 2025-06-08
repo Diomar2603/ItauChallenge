@@ -45,9 +45,9 @@ namespace ItauChallenge.Core.Entities
         public DateTime DataHora { get; set; }
 
         [ForeignKey("UsuarioId")]
-        public virtual required Usuario Usuario { get; set; }
+        public virtual Usuario Usuario { get; set; }
 
         [ForeignKey("AtivoId")]
-        public virtual required Ativo Ativo { get; set; }
+        public virtual Ativo Ativo { get; set; }
     }
 }

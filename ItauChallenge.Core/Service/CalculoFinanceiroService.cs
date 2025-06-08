@@ -1,54 +1,49 @@
 ﻿using ItauChallenge.Core.Entities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ItauChallenge.Core.Service
 {
     public class CalculoFinanceiroService
     {
-        /// <summary>
-        /// Calcula o preço médio ponderado de uma lista de operações de compra.
-        /// </summary>
-        /// <param name="compras">Uma coleção de operações de compra.</param>
-        /// <returns>O preço médio ponderado.</returns>
-        /// <exception cref="ArgumentNullException">Lançada se a lista de compras for nula.</exception>
-        /// <exception cref="ArgumentException">Lançada se a lista de compras estiver vazia ou contiver dados inválidos.</exception>
-        public decimal CalcularMediaPonderada(Operacao[] compras)
+        public decimal CalcularMediaPonderada(IEnumerable<Operacao> compras)
         {
             if (compras == null)
             {
                 throw new ArgumentNullException(nameof(compras), "A lista de compras não pode ser nula.");
             }
 
-            if (!compras.Any())
+            var listaDeCompras = compras.ToList();
+
+            if (!listaDeCompras.Any())
             {
                 return 0;
+            }
+
+            var gruposPorAtivo = listaDeCompras.GroupBy(c => c.AtivoId);
+
+            if (gruposPorAtivo.Count() > 1)
+            {
+                var idsDosAtivos = string.Join(", ", gruposPorAtivo.Select(g => g.Key));
+                throw new ArgumentException($"A lista de compras deve conter operações de apenas um ativo, mas foram encontrados os seguintes IDs: {idsDosAtivos}.");
             }
 
             decimal custoTotal = 0;
             int quantidadeTotal = 0;
 
-            foreach (var compra in compras)
+            foreach (var compra in listaDeCompras)
             {
                 if (compra.Quantidade <= 0)
                 {
-                    throw new ArgumentException($"A operação com ID {compra.Id} tem uma quantidade inválida (<=0): {compra.Quantidade}.");
+                    throw new ArgumentException($"A operação com ID {compra.Id} tem uma quantidade inválida: {compra.Quantidade}.");
                 }
                 if (compra.PrecoUnitario < 0)
                 {
-                    throw new ArgumentException($"A operação com ID {compra.Id} tem seu preço unitário inválido (<=0): {compra.PrecoUnitario}.");
+                    throw new ArgumentException($"A operação com ID {compra.Id} tem um preço unitário inválido: {compra.PrecoUnitario}.");
                 }
 
                 custoTotal += compra.Quantidade * compra.PrecoUnitario;
                 quantidadeTotal += compra.Quantidade;
-            }
-
-            if (quantidadeTotal == 0)
-            {
-                return 0;
             }
 
             return custoTotal / quantidadeTotal;

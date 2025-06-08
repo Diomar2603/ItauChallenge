@@ -28,6 +28,6 @@ namespace ItauChallenge.Core.Entities
         public DateTime DataHora { get; set; }
 
         [ForeignKey("AtivoId")]
-        public virtual required Ativo Ativo { get; set; }
+        public virtual Ativo Ativo { get; set; }
     }
 }

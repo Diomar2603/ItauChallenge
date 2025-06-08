@@ -8,10 +8,20 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{29E55057-30A9-4957-BDA3-7C013374B6FD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{03E74189-21E4-44E8-9C77-2C808829E987}"
+	ProjectSection(SolutionItems) = preProject
+		consulta_otimizada.sql = consulta_otimizada.sql
+		criacao_index.sql = criacao_index.sql
+		criacao_tabelas.sql = criacao_tabelas.sql
+		trigger_atualizacao_cotacao.sql = trigger_atualizacao_cotacao.sql
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "justificativas", "justificativas", "{D492D8E8-2409-47C0-AA60-B7B53CA71C26}"
+	ProjectSection(SolutionItems) = preProject
+		justificativa_index.txt = justificativa_index.txt
+		justificativa_tipo_dados.txt = justificativa_tipo_dados.txt
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItauChallenge.Core", "ItauChallenge.Core\ItauChallenge.Core.csproj", "{38881E37-BA45-4123-9CDD-97EB76D08CEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ItauChallenge.Core", "ItauChallenge.Core\ItauChallenge.Core.csproj", "{38881E37-BA45-4123-9CDD-97EB76D08CEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

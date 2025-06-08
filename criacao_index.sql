@@ -1,0 +1,1 @@
+CREATE INDEX idx_ops_user_asset_date ON operacoes (usr_id, atv_id, dt_hr);

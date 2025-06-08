@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ItauChallenge.Core\ItauChallenge.Core.csproj" />
+    <ProjectReference Include="..\ItauChallenge.Infrastructure\ItauChallenge.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

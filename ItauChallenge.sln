@@ -38,6 +38,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItauChallenge.Core.Tests", "ItaúChallenge.Core.Tests\ItauChallenge.Core.Tests.csproj", "{6404FB8F-4A44-413C-8FAB-3052B4BBCA13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{1965D117-D772-417C-A8A3-B3BE05561232}"
+	ProjectSection(SolutionItems) = preProject
+		testes_de_mutacao.txt = testes_de_mutacao.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

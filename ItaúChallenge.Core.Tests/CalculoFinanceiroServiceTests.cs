@@ -23,7 +23,7 @@ public class CalculoFinanceiroServiceTests
             new Operacao { Id = 2, AtivoId = 123, Quantidade = 20, PrecoUnitario = 25.00m }
         };
 
-        var resultado = _servico.CalcularMediaPonderada(compras);
+        var resultado = _servico.CalcularMediaPonderadaAtivo(compras);
 
         Assert.Equal(20.00m, resultado);
     }
@@ -35,7 +35,7 @@ public class CalculoFinanceiroServiceTests
         var compras = Array.Empty<Operacao>();
 
         // Act
-        var resultado = _servico.CalcularMediaPonderada(compras);
+        var resultado = _servico.CalcularMediaPonderadaAtivo(compras);
 
         // Assert
         Assert.Equal(0, resultado);
@@ -46,7 +46,7 @@ public class CalculoFinanceiroServiceTests
     {
         Operacao[] compras = null;
 
-        var exception = Assert.Throws<ArgumentNullException>(() => _servico.CalcularMediaPonderada(compras));
+        var exception = Assert.Throws<ArgumentNullException>(() => _servico.CalcularMediaPonderadaAtivo(compras));
         Assert.Equal("compras", exception.ParamName);
         Assert.Contains("A lista de compras não pode ser nula.", exception.Message);
     }
@@ -60,7 +60,7 @@ public class CalculoFinanceiroServiceTests
             new Operacao { Id = 2, AtivoId = 999, Quantidade = 5, PrecoUnitario = 50.00m }
         };
 
-        var exception = Assert.Throws<ArgumentException>(() => _servico.CalcularMediaPonderada(compras));
+        var exception = Assert.Throws<ArgumentException>(() => _servico.CalcularMediaPonderadaAtivo(compras));
         Assert.Contains("A lista de compras deve conter operações de apenas um ativo", exception.Message);
         Assert.Contains("123", exception.Message);
         Assert.Contains("999", exception.Message);
@@ -75,7 +75,7 @@ public class CalculoFinanceiroServiceTests
             new Operacao { Id = 2, AtivoId = 123, Quantidade = 10, PrecoUnitario = 0.00m }   
         };
 
-        var resultado = _servico.CalcularMediaPonderada(compras);
+        var resultado = _servico.CalcularMediaPonderadaAtivo(compras);
 
         Assert.Equal(10.00m, resultado);
     }
@@ -86,7 +86,7 @@ public class CalculoFinanceiroServiceTests
         var operacaoComPrecoInvalido = new Operacao { Id = 5, AtivoId = 123, Quantidade = 10, PrecoUnitario = -10.00m };
         var compras = new Operacao[] { operacaoComPrecoInvalido };
 
-        var exception = Assert.Throws<ArgumentException>(() => _servico.CalcularMediaPonderada(compras));
+        var exception = Assert.Throws<ArgumentException>(() => _servico.CalcularMediaPonderadaAtivo(compras));
         Assert.Contains($"A operação com ID {operacaoComPrecoInvalido.Id} tem um preço unitário inválido", exception.Message);
     }
 
@@ -96,7 +96,7 @@ public class CalculoFinanceiroServiceTests
         var operacaoComQuantidadeInvalida = new Operacao { Id = 3, AtivoId = 123, Quantidade = -10, PrecoUnitario = 10.00m };
         var compras = new Operacao[] { operacaoComQuantidadeInvalida };
 
-        var exception = Assert.Throws<ArgumentException>(() => _servico.CalcularMediaPonderada(compras));
+        var exception = Assert.Throws<ArgumentException>(() => _servico.CalcularMediaPonderadaAtivo(compras));
         Assert.Contains($"A operação com ID {operacaoComQuantidadeInvalida.Id} tem uma quantidade inválida", exception.Message);
     }
 
@@ -111,7 +111,7 @@ public class CalculoFinanceiroServiceTests
             operacaoComQuantidadeInvalida
         };
 
-        var exception = Assert.Throws<ArgumentException>(() => _servico.CalcularMediaPonderada(compras));
+        var exception = Assert.Throws<ArgumentException>(() => _servico.CalcularMediaPonderadaAtivo(compras));
         Assert.Contains($"A operação com ID {operacaoComQuantidadeInvalida.Id} tem uma quantidade inválida", exception.Message);
     }
 

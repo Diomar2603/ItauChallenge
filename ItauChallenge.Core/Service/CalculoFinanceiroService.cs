@@ -6,7 +6,7 @@ namespace ItauChallenge.Core.Service
 {
     public class CalculoFinanceiroService
     {
-        public decimal CalcularMediaPonderada(IEnumerable<Operacao> compras)
+        public decimal CalcularMediaPonderadaAtivo(Operacao[] compras)
         {
             if (compras == null)
             {

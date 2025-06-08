@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0D8C956F-A7CD-4761-A7DE-EB7A714C5052}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{29E55057-30A9-4957-BDA3-7C013374B6FD}"
+	ProjectSection(SolutionItems) = preProject
+		.gitkeep = .gitkeep
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{03E74189-21E4-44E8-9C77-2C808829E987}"
 	ProjectSection(SolutionItems) = preProject
@@ -33,6 +36,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{67AF0932-9566-4593-B897-4D158FA48752}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItauChallenge.Core.Tests", "ItaúChallenge.Core.Tests\ItauChallenge.Core.Tests.csproj", "{6404FB8F-4A44-413C-8FAB-3052B4BBCA13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{1965D117-D772-417C-A8A3-B3BE05561232}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

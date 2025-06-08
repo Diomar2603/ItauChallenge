@@ -24,7 +24,7 @@ namespace ItauChallenge.Core.Entities
         public int AtivoId { get; set; }
 
         [Required]
-        [Column("vlr_cota", TypeName = "decimal(18, 8)")]
+        [Column("vlr_cota", TypeName = "decimal(18, 2)")]
         public decimal ValorPorCota { get; set; }
 
         [Required]

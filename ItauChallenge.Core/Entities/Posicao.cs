@@ -28,7 +28,7 @@ namespace ItauChallenge.Core.Entities
         public int Quantidade { get; set; }
 
         [Required]
-        [Column("prc_medio", TypeName = "decimal(18, 8)")]
+        [Column("prc_medio", TypeName = "decimal(18, 2)")]
         public decimal PrecoMedio { get; set; }
 
         [Required]

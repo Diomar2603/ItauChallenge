@@ -34,7 +34,7 @@ CREATE TABLE operacoes (
     usr_id INT NOT NULL,
     atv_id INT NOT NULL,
     qtd INT NOT NULL,
-    prc_unt DECIMAL(18, 8) NOT NULL,
+    prc_unt DECIMAL(18, 2) NOT NULL,
     tipo TINYINT NOT NULL COMMENT 'Tipo da operação: 0 para Venda, 1 para Compra',
     corretagem DECIMAL(10, 2) NOT NULL DEFAULT 0,
     dt_hr DATETIME(3) NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE operacoes (
 CREATE TABLE cotacoes (
     id BIGINT PRIMARY KEY AUTO_INCREMENT,
     atv_id INT NOT NULL,
-    prc_unt DECIMAL(18, 8) NOT NULL,
+    prc_unt DECIMAL(18, 2) NOT NULL,
     dt_hr DATETIME(3) NOT NULL,
     FOREIGN KEY (atv_id) REFERENCES ativos(id)
 );
@@ -59,7 +59,7 @@ CREATE TABLE posicoes (
     usr_id INT NOT NULL,
     atv_id INT NOT NULL,
     qtd INT NOT NULL,
-    prc_medio DECIMAL(18, 8) NOT NULL COMMENT 'Preço médio de aquisição do ativo',
+    prc_medio DECIMAL(18, 2) NOT NULL COMMENT 'Preço médio de aquisição do ativo',
     pl DECIMAL(18, 2) NOT NULL COMMENT 'Lucro e Prejuízo (P&L)',
     FOREIGN KEY (usr_id) REFERENCES usuarios(id),
     FOREIGN KEY (atv_id) REFERENCES ativos(id),
@@ -72,7 +72,7 @@ CREATE TABLE dividendos (
     id INT PRIMARY KEY AUTO_INCREMENT,
     usr_id INT NOT NULL,
     atv_id INT NOT NULL,
-    vlr_cota DECIMAL(18, 8) NOT NULL,
+    vlr_cota DECIMAL(18, 2) NOT NULL,
     qtd_base INT NOT NULL COMMENT 'Quantidade de ativos na data de direito ao provento',
     dt_pgto DATE NOT NULL,
     FOREIGN KEY (usr_id) REFERENCES usuarios(id),

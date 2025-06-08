@@ -29,7 +29,7 @@ namespace ItauChallenge.Core.Entities
         public int Quantidade { get; set; }
 
         [Required]
-        [Column("prc_unt", TypeName = "decimal(18, 8)")]
+        [Column("prc_unt", TypeName = "decimal(18, 2)")]
         public decimal PrecoUnitario { get; set; }
 
         [Required]

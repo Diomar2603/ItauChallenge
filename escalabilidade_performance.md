@@ -23,8 +23,6 @@ Para aplicar esta estratégia ao serviço, seguimos estes passos:
 
 ## Comparativo de Estratégias de Balanceamento de Carga
 
-[cite_start]O Balanceador de Carga (Load Balancer) é o componente que distribui as requisições recebidas entre as múltiplas instâncias da aplicação. A escolha da estratégia de distribuição é crucial para a performance.
-
 ### Estratégia: Round Robin
 
 É o método mais simples de balanceamento de carga. Ele distribui as requisições de forma sequencial e cíclica para cada instância disponível.

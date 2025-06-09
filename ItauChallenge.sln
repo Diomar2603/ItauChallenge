@@ -35,7 +35,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItauChallenge.ConsoleApp", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{67AF0932-9566-4593-B897-4D158FA48752}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItaúChallenge.Core.Tests", "ItaúChallenge.Core.Tests\ItaúChallenge.Core.Tests.csproj", "{6404FB8F-4A44-413C-8FAB-3052B4BBCA13}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItauChallenge.Core.Tests", "ItaúChallenge.Core.Tests\ItauChallenge.Core.Tests.csproj", "{6404FB8F-4A44-413C-8FAB-3052B4BBCA13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{1965D117-D772-417C-A8A3-B3BE05561232}"
 	ProjectSection(SolutionItems) = preProject

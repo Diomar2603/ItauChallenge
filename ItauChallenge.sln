@@ -50,6 +50,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dockersUtilizados", "docker
 		docker-kafka-ui.yml = docker-kafka-ui.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItauChallenge.Api", "ItauChallenge.Api\ItauChallenge.Api.csproj", "{BCF5C327-716A-4728-8AEA-4CE2B4C41975}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +82,10 @@ Global
 		{F138A789-61B7-4123-8105-E659901C3CF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F138A789-61B7-4123-8105-E659901C3CF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F138A789-61B7-4123-8105-E659901C3CF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCF5C327-716A-4728-8AEA-4CE2B4C41975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCF5C327-716A-4728-8AEA-4CE2B4C41975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCF5C327-716A-4728-8AEA-4CE2B4C41975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCF5C327-716A-4728-8AEA-4CE2B4C41975}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +99,7 @@ Global
 		{2B6F2558-3C7F-471C-B8BF-C9BFA5554C41} = {0D8C956F-A7CD-4761-A7DE-EB7A714C5052}
 		{6404FB8F-4A44-413C-8FAB-3052B4BBCA13} = {67AF0932-9566-4593-B897-4D158FA48752}
 		{F138A789-61B7-4123-8105-E659901C3CF8} = {0D8C956F-A7CD-4761-A7DE-EB7A714C5052}
+		{BCF5C327-716A-4728-8AEA-4CE2B4C41975} = {0D8C956F-A7CD-4761-A7DE-EB7A714C5052}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D8B5A15-B2F8-47A5-AED7-CAF13A7FD896}

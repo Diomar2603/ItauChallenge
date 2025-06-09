@@ -8,5 +8,7 @@ namespace ItauChallenge.Application.Interfaces
 {
     public interface ICorretoraService
     {
+        Task<decimal> GetReceitaTotalDeCorretagemAsync();
+
     }
 }

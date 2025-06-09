@@ -10,5 +10,7 @@ namespace ItauChallenge.Core.Interfaces
     public interface IOperacoesRepository
     {
         public Task<IEnumerable<Operacao>> GetByIdUsuarioAsync(int userId);
+        Task<IEnumerable<Operacao>> GetComprasPorUsuarioEAtivoAsync(int usuarioId, int ativoId);
+
     }
 }

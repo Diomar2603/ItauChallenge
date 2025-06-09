@@ -10,5 +10,9 @@ namespace ItauChallenge.Application.Interfaces
     public interface IPortfolioService
     {
         public Task<UsuarioPortfolioDto> GetPortifolioUsuarioAsync(int userId);
+
+        public Task<PrecoMedioDto> GetPrecoMedioPorAtivoAsync(int usuarioId, string codigoAtivo);
+
+        public Task<PosicaoConsolidadaDto> GetPosicaoConsolidadaAsync(int usuarioId);
     }
 }

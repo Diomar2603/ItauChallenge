@@ -1,4 +1,5 @@
 ﻿using ItauChallenge.Core.Entities;
+using ItauChallenge.Core.Enums;
 using ItauChallenge.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -23,6 +24,15 @@ namespace ItauChallenge.Infrastructure.Data.Repositories
             return await _context.Operacoes
                                  .Where(op => op.UsuarioId == userId)
                                  .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Operacao>> GetComprasPorUsuarioEAtivoAsync(int usuarioId, int ativoId)
+        {
+            return await _context.Operacoes
+            .Where(op => op.UsuarioId == usuarioId)
+            .Where(op => op.AtivoId == ativoId)
+            .Where(op => op.Tipo == TipoOperacao.Compra)
+            .ToListAsync();
         }
     }
 }

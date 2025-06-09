@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ItauChallenge.Application.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace ItauChallenge.Application.Interfaces
 {
     public interface IClienteService
     {
+        Task<ClienteRanqueadoDto[]> GetTop10ClientesAsync(string criterio);
     }
 }

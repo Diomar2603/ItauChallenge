@@ -1,35 +1,31 @@
-## Teste de MutaÁ„o
+## Teste de Muta√ß√£o
 
-### Conceito e Import‚ncia
+### Conceito e Import√¢ncia
 
-O **teste de mutaÁ„o** È uma tÈcnica avanÁada utilizada para avaliar e garantir a qualidade da sua suÌte de testes unit·rios. A ideia central n„o È testar o cÛdigo da aplicaÁ„o em si, mas sim **testar os prÛprios testes**.
+O **teste de muta√ß√£o** √© uma t√©cnica avan√ßada utilizada para avaliar e garantir a qualidade da sua su√≠te de testes unit√°rios. A ideia central n√£o √© testar o c√≥digo da aplica√ß√£o em si, mas sim **testar os pr√≥prios testes**.
 
 O processo funciona da seguinte maneira:
-1.  Pequenas alteraÁıes sintaticamente v·lidas, chamadas **mutaÁıes**, s„o introduzidas automaticamente no seu cÛdigo-fonte. Por exemplo, um operador `+` È trocado por `-`, ou um `>` por `>=`.
-2.  Os testes unit·rios existentes s„o executados novamente sobre o cÛdigo mutante.
-3.  Se os testes falharem, diz-se que eles **"mataram o mutante"**. Isso È um bom sinal, pois indica que sua suÌte de testes È robusta o suficiente para detectar essa pequena alteraÁ„o.
-4.  Se os testes continuarem a passar, o **"mutante sobreviveu"**. Isso aponta uma fraqueza ou uma lacuna na sua suÌte de testes, que n„o foi capaz de identificar a mudanÁa no comportamento do cÛdigo.
+1.  Pequenas altera√ß√µes sintaticamente v√°lidas, chamadas **muta√ß√µes**, s√£o introduzidas automaticamente no seu c√≥digo-fonte. Por exemplo, um operador `+` √© trocado por `-`, ou um `>` por `>=`.
+2.  Os testes unit√°rios existentes s√£o executados novamente sobre o c√≥digo mutante.
+3.  Se os testes falharem, diz-se que eles **"mataram o mutante"**. Isso √© um bom sinal, pois indica que sua su√≠te de testes √© robusta o suficiente para detectar essa pequena altera√ß√£o.
+4.  Se os testes continuarem a passar, o **"mutante sobreviveu"**. Isso aponta uma fraqueza ou uma lacuna na sua su√≠te de testes, que n√£o foi capaz de identificar a mudan√ßa no comportamento do c√≥digo.
 
-> A qualidade de uma bateria de testes È medida pela sua capacidade de detectar falhas no cÛdigo ó inclusive falhas introduzidas de propÛsito.
+> A qualidade de uma bateria de testes √© medida pela sua capacidade de detectar falhas no c√≥digo ‚Äî inclusive falhas introduzidas de prop√≥sito.
 
 ---
 
-### Exemplo Pr·tico
+### Exemplo Pr√°tico
 
-Vamos aplicar o conceito ao mÈtodo `CalcularMediaPonderada` da nossa classe `CalculoFinanceiroService`.
+Vamos aplicar o conceito ao m√©todo `CalcularMediaPonderada` da nossa classe `CalculoFinanceiroService`.
 
-#### CÛdigo Original
-O c·lculo do custo total È feito pela multiplicaÁ„o de `Quantidade` por `PrecoUnitario`.
+#### C√≥digo Original
+O c√°lculo do custo total √© feito pela multiplica√ß√£o de `Quantidade` por `PrecoUnitario`.
 
 ```csharp
-// ...
 custoTotal += compra.Quantidade * compra.PrecoUnitario;
-// ...
 
-### CÛdigo para teste mutante
+### C√≥digo para teste mutante
 Trocar o operador * foi trocado por -
 
-```csharp
-// ...
 custoTotal += compra.Quantidade - compra.PrecoUnitario; 
-// ...
+```

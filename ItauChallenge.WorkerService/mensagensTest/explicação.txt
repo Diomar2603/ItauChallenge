@@ -1,1 +1,0 @@
-﻿Pasta criata para utilizando o "kcat" enviar mensagens simulando possiveis cotações sendo enviadas para o worker.

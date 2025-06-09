@@ -29,25 +29,25 @@ A solução foi organizada seguindo os princípios da Clean Architecture, dividi
 
 ## 📝 Respostas e Justificativas
 
-As respostas para as questões dissertativas e as justificativas técnicas solicitadas no desafio estão organizadas em arquivos `.md` dentro da pasta `/docs` do repositório.
+As respostas para as questões dissertativas e as justificativas técnicas solicitadas no desafio estão organizadas em arquivos `.md`.
 
 | Atividade | Tópico | Localização no Repositório |
 | :--- | :--- | :--- |
-| **1** | Modelagem de Banco e Justificativas | `/Database/justificativas/justificativa_tipo_dados.md` |
-| **2** | Índices e Performance | `/Database/justificativas/justificativa_index.md` |
-| **6** | Teste Mutante | `/docs/testes_mutantes.md` |
-| **9** | Escalabilidade e Performance | `/docs/escalabilidade_performance.md` |
-| **10** | Documentação da API (OpenAPI) | `/docs/documentacaoApi.json` |
+| **1** | Modelagem de Banco e Justificativas | `justificativa_tipo_dados.md` |
+| **2** | Índices e Performance | `justificativa_index.md` |
+| **6** | Teste Mutante | `testes_mutantes.md` |
+| **9** | Escalabilidade e Performance | `escalabilidade_performance.md` |
+| **10** | Documentação da API (OpenAPI) | `documentacaoApi.json` |
 
 ---
 
 ##  Maneira de efetuar os testes:
 
 ### Testes relacionados a trabalho com os dados
-Geração de base de dados utilizando o arquivo `/Database/scripts/criacao_dados_ficticios.sql`
+Geração de base de dados utilizando o arquivo `criacao_dados_ficticios.sql`
 
 ### Testes Kafka
-Foram efetuados enviando mensagens utilizando o kafka-ui, em um ambiente doker gerado pelo `/dockersUtilizados/docker-kafka-ui.yml`, com mensagens utilizando o padrão dentro do `ItauChallenge.WorkerService\mensagensTest\mensagem1.json`
+Foram efetuados enviando mensagens utilizando o kafka-ui, em um ambiente doker gerado pelo `docker-kafka-ui.yml`, com mensagens utilizando o padrão dentro do `ItauChallenge.WorkerService\mensagensTest\mensagem1.json`
 
 ## Evidencias de teste:
 ### Testes unitarios
@@ -80,10 +80,6 @@ Foram efetuados enviando mensagens utilizando o kafka-ui, em um ambiente doker g
 ![image](https://github.com/user-attachments/assets/bdc103ae-c7be-467d-871e-1189a3269fc3)
 ![image](https://github.com/user-attachments/assets/506f2e7d-22b4-407b-8af7-4b6db951f69f)
 ![image](https://github.com/user-attachments/assets/be41d0fb-282e-4e1d-ba1d-14becf8b1bf7)
-
-
-
-
 
 ##  Como Configurar e Rodar o Projeto
 

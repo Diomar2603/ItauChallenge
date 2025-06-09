@@ -10,5 +10,6 @@ namespace ItauChallenge.Core.Interfaces
     public interface IAtivosRepository
     {
         public Task<Ativo>  GetByIdAsync(int ativoId);
+        public Task<Ativo>  GetByCodigoAsync(string codigoDoAtivo);
     }
 }

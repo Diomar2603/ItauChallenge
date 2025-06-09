@@ -9,7 +9,7 @@ namespace ItauChallenge.Core.Interfaces
 {
     public interface ICotacoesRepository 
     {
-        public Task<Boolean> ExisteAssync(int ativoId, DateTime dataHora);
-        public void AdicionarAsync(Cotacao cotacao);
+        public Task<Boolean> ExisteAsync(int ativoId, DateTime dataHora);
+        public Task<Cotacao> AdicionarAsync(Cotacao cotacao);
     }
 }

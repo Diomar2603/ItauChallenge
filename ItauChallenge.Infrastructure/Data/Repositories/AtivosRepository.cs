@@ -18,6 +18,11 @@ namespace ItauChallenge.Infrastructure.Data.Repositories
             _context = context;
         }
 
+        public async Task<Ativo> GetByCodigoAsync(string codigoDoAtivo)
+        {
+            return await _context.Ativos.FirstAsync(a => a.Codigo == codigoDoAtivo);
+        }
+
         public async Task<Ativo> GetByIdAsync(int ativoId)
         {
             return await _context.Ativos.FirstAsync(a => a.Id == ativoId);

@@ -10,14 +10,33 @@ namespace ItauChallenge.Infrastructure.Data.Repositories
 {
     public class CotacoesRepository : ICotacoesRepository
     {
-        public void AdicionarAsync(Cotacao cotacao)
+        private readonly AppDbContext _context;
+
+        public CotacoesRepository(AppDbContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+        public async Task<Cotacao> AdicionarAsync(Cotacao cotacao)
+        {
+            var novaCotacao = await _context.Cotacoes.AddAsync(cotacao);
+            await _context.SaveChangesAsync();
+
+            return await Task.FromResult(novaCotacao.Entity);
+
         }
 
-        Task<bool> ICotacoesRepository.ExisteAssync(int ativoId, DateTime dataHora)
+        public Task<bool> ExisteAsync(int ativoId, DateTime dataHora)
         {
-            throw new NotImplementedException();
+            var cotacaoDuplicada = _context.Cotacoes.
+                                            Where(c => c.AtivoId == ativoId & c.DataHora.Equals(dataHora))
+                                            .FirstOrDefault();
+
+            var exists = true;
+
+            if (cotacaoDuplicada == null) 
+                exists = false;
+
+            return Task.FromResult(exists);
         }
     }
 }

@@ -27,6 +27,13 @@ namespace ItauChallenge.Core.Entities
         [Column("dt_hr", TypeName = "datetime(3)")]
         public DateTime DataHora { get; set; }
 
+        public Cotacao(int ativoId, decimal precoUnitario, DateTime dataHora)
+        {
+            AtivoId = ativoId;
+            PrecoUnitario = precoUnitario;
+            DataHora = dataHora;
+        }
+
         [ForeignKey("AtivoId")]
         public virtual Ativo Ativo { get; set; }
     }

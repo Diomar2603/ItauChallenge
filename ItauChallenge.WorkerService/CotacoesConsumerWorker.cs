@@ -72,7 +72,7 @@ public class CotacoesConsumerWorker : BackgroundService
                     var cotacao = JsonSerializer.Deserialize<Cotacao>(cotacaoJson);
                     var jaExiste = false;
 
-                    if (cotacao != null)
+                    if (cotacao == null)
                     {
                         _logger.LogWarning($"Cotação sem informações recebida e ignorada.");
                         return;

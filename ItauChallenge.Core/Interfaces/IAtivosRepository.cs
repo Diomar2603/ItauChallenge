@@ -9,6 +9,6 @@ namespace ItauChallenge.Core.Interfaces
 {
     public interface IAtivosRepository
     {
-        Task<Ativo> GetByIdAsync(int ativoId);
+        public Task<Ativo>  GetByIdAsync(int ativoId);
     }
 }

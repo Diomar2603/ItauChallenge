@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace ItauChallenge.Core.Interfaces
 {
-    public interface IOperacoesRepository
+    public interface ICotacoesRepository 
     {
-        public Task<IEnumerable<Operacao>> GetByIdUsuarioAsync(int userId);
+        public Task<Boolean> ExisteAssync(int ativoId, DateTime dataHora);
+        public void AdicionarAsync(Cotacao cotacao);
     }
 }

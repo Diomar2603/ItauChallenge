@@ -9,6 +9,6 @@ namespace ItauChallenge.Core.Interfaces
 {
     public interface IPosicoesRepository
     {
-        Task<IEnumerable<Posicao>> GetByIdUsuarioAsync(int userId);
+        public Task<IEnumerable<Posicao>> GetByIdUsuarioAsync(int userId);
     }
 }

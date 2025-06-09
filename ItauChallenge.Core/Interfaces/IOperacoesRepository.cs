@@ -13,5 +13,7 @@ namespace ItauChallenge.Core.Interfaces
         public Task<IEnumerable<Operacao>> GetComprasPorUsuarioEAtivoAsync(int usuarioId, int ativoId);
 
         public Task<IEnumerable<Operacao>> GetAllAsync();
+        public Task<decimal> GetSomaTotalCorretagemAsync();
+
     }
 }

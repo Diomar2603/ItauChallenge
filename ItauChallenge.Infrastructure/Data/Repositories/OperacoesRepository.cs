@@ -39,5 +39,10 @@ namespace ItauChallenge.Infrastructure.Data.Repositories
             .Where(op => op.Tipo == TipoOperacao.Compra)
             .ToListAsync();
         }
+
+        public async Task<decimal> GetSomaTotalCorretagemAsync()
+        {
+            return await _context.Operacoes.SumAsync(op => op.Corretagem);
+        }
     }
 }

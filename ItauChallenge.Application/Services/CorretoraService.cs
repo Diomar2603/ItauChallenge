@@ -1,4 +1,5 @@
 ﻿using ItauChallenge.Application.Interfaces;
+using ItauChallenge.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,15 @@ namespace ItauChallenge.Application.Services
 {
     public class CorretoraService : ICorretoraService
     {
-        public Task<decimal> GetReceitaTotalDeCorretagemAsync()
+        private readonly IOperacoesRepository _operacoesRepository;
+
+        public CorretoraService(IOperacoesRepository operacoesRepository)
         {
-            throw new NotImplementedException();
+            _operacoesRepository = operacoesRepository;
+        }
+        public async Task<decimal> GetReceitaTotalDeCorretagemAsync()
+        {
+            return await _operacoesRepository.GetSomaTotalCorretagemAsync();
         }
     }
 }

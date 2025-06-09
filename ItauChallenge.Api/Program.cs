@@ -1,6 +1,7 @@
 using ItauChallenge.Application.Interfaces;
 using ItauChallenge.Application.Services;
 using ItauChallenge.Core.Interfaces;
+using ItauChallenge.Core.Service;
 using ItauChallenge.Infrastructure.Data;
 using ItauChallenge.Infrastructure.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -37,6 +38,7 @@ builder.Services.AddScoped<ICotacaoService, CotacaoService>();
 builder.Services.AddScoped<IPortfolioService, PortfolioService>();
 builder.Services.AddScoped<IClienteService, ClienteService>();
 builder.Services.AddScoped<ICorretoraService, CorretoraService>();
+builder.Services.AddScoped<ICalculoFinanceiroService, CalculoFinanceiroService>();
 
 var app = builder.Build();
 

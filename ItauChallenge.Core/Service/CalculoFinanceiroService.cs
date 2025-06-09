@@ -1,10 +1,11 @@
 ﻿using ItauChallenge.Core.Entities;
+using ItauChallenge.Core.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace ItauChallenge.Core.Service
 {
-    public class CalculoFinanceiroService
+    public class CalculoFinanceiroService : ICalculoFinanceiroService
     {
         public decimal CalcularMediaPonderadaAtivo(Operacao[] compras)
         {

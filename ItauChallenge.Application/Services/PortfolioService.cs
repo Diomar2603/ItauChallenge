@@ -17,15 +17,16 @@ namespace ItauChallenge.Application.Services
         private readonly IOperacoesRepository _operacoesRepository;
         private readonly IPosicoesRepository _posicoesRepository;
         private readonly IAtivosRepository _ativosRepository;
-        private readonly CalculoFinanceiroService _calculadorFinanceiro;
+        private readonly ICalculoFinanceiroService _calculadorFinanceiro;
 
 
-        public PortfolioService(IOperacoesRepository operacaoRepo, IPosicoesRepository posicaoRepo, IAtivosRepository ativoRepo)
+        public PortfolioService(IOperacoesRepository operacaoRepo, IPosicoesRepository posicaoRepo, 
+                                IAtivosRepository ativoRepo, ICalculoFinanceiroService calculoFinanceiroService)
         {
             _operacoesRepository = operacaoRepo;
             _posicoesRepository = posicaoRepo;
             _ativosRepository = ativoRepo;
-            _calculadorFinanceiro = new CalculoFinanceiroService();
+            _calculadorFinanceiro = calculoFinanceiroService;
         }
 
         public async Task<UsuarioPortfolioDto> GetPortifolioUsuarioAsync(int userId)

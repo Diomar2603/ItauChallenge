@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using Xunit;
 using ItauChallenge.Core.Service;
 using ItauChallenge.Core.Entities;
-using System.Linq; 
+using System.Linq;
+using ItauChallenge.Core.Interfaces;
 
 public class CalculoFinanceiroServiceTests
 {
-    private readonly CalculoFinanceiroService _servico;
+
+    private readonly ICalculoFinanceiroService _servico;
 
     public CalculoFinanceiroServiceTests()
     {

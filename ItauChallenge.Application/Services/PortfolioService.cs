@@ -1,4 +1,5 @@
 ﻿using ItauChallenge.Application.DTO;
+using ItauChallenge.Application.Interfaces;
 using ItauChallenge.Core.Enums;
 using ItauChallenge.Core.Interfaces;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ItauChallenge.Application.Services
 {
-    public class PortfolioService
+    public class PortfolioService : IPortfolioService
     {
         private readonly IOperacoesRepository _operacoesRepository;
         private readonly IPosicoesRepository _posicoesRepository;

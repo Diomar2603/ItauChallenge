@@ -9,6 +9,7 @@ using System;
 using ItauChallenge.Infrastructure.Data;
 using ItauChallenge.Application.Services;
 using Microsoft.Extensions.Hosting;
+using ItauChallenge.Application.Interfaces;
 
 public class Program
 {
@@ -26,11 +27,11 @@ public class Program
         services.AddScoped<IOperacoesRepository, OperacoesRepository>();
         services.AddScoped<IPosicoesRepository, PosicoesRepository>();
         services.AddScoped<IAtivosRepository, AtivosRepository>();
-        services.AddScoped<PortfolioService>();
+        services.AddScoped<IPortfolioService, PortfolioService>();
 
         var serviceProvider = services.BuildServiceProvider();
 
-        var portfolioService = serviceProvider.GetRequiredService<PortfolioService>();
+        var portfolioService = serviceProvider.GetRequiredService<IPortfolioService>();
 
         Console.WriteLine("Iniciando cálculo do portfólio...");
         int sampleUserId = 1;

@@ -46,7 +46,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItauChallenge.WorkerService
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dockersUtilizados", "dockersUtilizados", "{98956F44-8785-44CD-B6C3-1DBFF9F80416}"
 	ProjectSection(SolutionItems) = preProject
-		..\..\..\..\Arquivos\docker-kafka-ui.yml = ..\..\..\..\Arquivos\docker-kafka-ui.yml
+		docker-kafka-ui.yml = docker-kafka-ui.yml
 	EndProjectSection
 EndProject
 Global

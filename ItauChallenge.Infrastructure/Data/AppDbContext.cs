@@ -17,6 +17,5 @@ namespace ItauChallenge.Infrastructure.Data
         public DbSet<Usuario> Usuarios { get; set; } 
         public DbSet<Ativo> Ativos { get; set; } 
         public DbSet<Cotacao> Cotacoes { get; set; } 
-        public DbSet<Dividendo> Dividendos { get; set; }
     }
 }

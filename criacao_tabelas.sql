@@ -65,16 +65,3 @@ CREATE TABLE posicoes (
     FOREIGN KEY (atv_id) REFERENCES ativos(id),
     UNIQUE (usr_id, atv_id)
 );
-
----- Tabela de  Dividendos
----- Depende de `Usuarios` (usr) e `Ativos` (atv)
-CREATE TABLE dividendos (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    usr_id INT NOT NULL,
-    atv_id INT NOT NULL,
-    vlr_cota DECIMAL(18, 2) NOT NULL,
-    qtd_base INT NOT NULL COMMENT 'Quantidade de ativos na data de direito ao provento',
-    dt_pgto DATE NOT NULL,
-    FOREIGN KEY (usr_id) REFERENCES usuarios(id),
-    FOREIGN KEY (atv_id) REFERENCES ativos(id)
-);

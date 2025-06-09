@@ -102,18 +102,3 @@ JOIN
     UltimaCotacao uc ON p.atv_id = uc.atv_id
 WHERE
     p.qtd_atual > 0;
-
-INSERT INTO dividendos (usr_id, atv_id, vlr_cota, qtd_base, dt_pgto)
-SELECT
-    p.usr_id,
-    d.atv_id,
-    d.vlr_cota,
-    p.qtd AS qtd_base,
-    d.dt_pgto
-FROM
-    posicoes p
-JOIN (
-    SELECT 1 AS atv_id, 0.85 AS vlr_cota, '2025-05-28' AS dt_pgto UNION ALL
-    SELECT 2, 1.15, '2025-03-31' UNION ALL
-    SELECT 3, 0.22, '2025-04-30'
-) AS d ON p.atv_id = d.atv_id;

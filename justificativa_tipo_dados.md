@@ -57,16 +57,3 @@ Consolida a carteira de cada cliente, mostrando seus ativos e resultados.
 * **`qtd`** (`INT`): A quantidade atual de ativos na posição do cliente, sendo um número inteiro.
 * **`prc_medio`** (`DECIMAL(18, 2)`): Representa o preço médio de aquisição, exigindo a precisão de um `DECIMAL` para cálculos financeiros corretos.
 * **`pl`** (`DECIMAL(18, 2)`): Armazena o Lucro ou Prejuízo (Profit & Loss), um valor financeiro final que se beneficia da precisão e do formato monetário de `DECIMAL` com duas casas.
-
----
-
-## Tabela: `dividendos`
-
-*(Tabela extra criada para permitir o cálculo do Preço Médio conforme a regra de negócio)*
-
-* **`id`** (`INT`): Chave primária da tabela.
-* **`usr_id`** (`INT`): Chave estrangeira para a tabela `usuarios`.
-* **`atv_id`** (`INT`): Chave estrangeira para a tabela `ativos`.
-* **`vlr_cota`** (`DECIMAL(18, 2)`): O valor do provento pago por cota/ação, necessitando de precisão `DECIMAL`.
-* **`qtd_base`** (`INT`): A quantidade de ativos que o usuário possuía e que serviu de base para o pagamento do provento.
-* **`dt_pgto`** (`DATETIME`): A data em que o pagamento do dividendo foi efetuado.

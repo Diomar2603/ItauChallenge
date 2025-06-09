@@ -32,6 +32,5 @@ namespace ItauChallenge.Core.Entities
 
         public virtual ICollection<Operacao> Operacoes { get; set; } = new List<Operacao>();
         public virtual ICollection<Posicao> Posicoes { get; set; } = new List<Posicao>();
-        public virtual ICollection<Dividendo> Dividendos { get; set; } = new List<Dividendo>();
     }
 }

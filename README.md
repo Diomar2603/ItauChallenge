@@ -7,7 +7,7 @@ Este repositório contém a solução completa para o Desafio Técnico , propost
 As principais tecnologias utilizadas foram:
 * **Backend:** .NET / C#
 * **API:** ASP.NET Core Web API
-* **Acesso a Dados:** Entity Framework Core (ou Dapper) e MySQL
+* **Acesso a Dados:** Entity Framework Core e MySQL
 * **Testes:** xUnit
 * **Mensageria:** Kafka com Docker
 * **Resiliência:** Polly
@@ -20,7 +20,7 @@ A solução foi organizada seguindo os princípios da Clean Architecture, dividi
 
 * **`ItauChallenge.Core`**: Camada mais interna, contendo as entidades de domínio e as interfaces dos repositórios. Não possui dependências externas.
 * **`ItauChallenge.Application`**: Contém a lógica de negócio, os serviços e os DTOs (Data Transfer Objects). Orquestra o fluxo de dados entre a apresentação e a infraestrutura.
-* **`ItauChallenge.Infrastructure`**: Implementa o acesso a dados (repositórios com EF Core/Dapper) e a comunicação com serviços externos como o Kafka.
+* **`ItauChallenge.Infrastructure`**: Implementa o acesso a dados (repositórios com EF Core) e a comunicação com serviços externos como o Kafka.
 * **`ItauChallenge.Api`**: A camada de apresentação, expondo os endpoints da API REST.
 * **`ItauChallenge.WorkerService`**: Serviço de background para consumir mensagens do Kafka em tempo real.
 * **`ItauChallenge.Tests`**: Projeto com os testes unitários para garantir a qualidade do código.
@@ -87,9 +87,58 @@ Foram efetuados enviando mensagens utilizando o kafka-ui, em um ambiente doker g
 
 * [.NET SDK 8.0](https://dotnet.microsoft.com/download/dotnet/8.0) (ou a versão utilizada no projeto)
 * [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+* [MySQL Server](https://dev.mysql.com/downloads/mysql/) (ou um cliente compatível)
 * Um cliente Git
 
 ### 1. Clonar o Repositório
 ```bash
-git clone [URL_DO_SEU_REPOSITORIO]
-cd [NOME_DA_PASTA_DO_PROJETO]
+git clone https://github.com/Diomar2603/ItauChallenge.git
+```
+
+### 2. Executar projeto no Visual Studio
+#### ConsoleApp
+Neste caso apenas abrir a Solution no visual studio, encontrar o projeto `**ItauChallenge.ConsoleApp`** e executar o projeto
+
+#### Projeto WorkerService
+No caso do WorkerService será necessario inserir os parametros na `**appsettings.json`** do projeto, contendo suar configurações Kafka 
+e do banco de dados. EX:
+```bash
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "ConnectionStrings": {
+    "DefaultBdConnection": "Server=localhost;Database=itau_challenge_db;User=root;Password=Lea@2023!;"
+  },
+  "KafkaConnectionSettings": {
+    "BootstrapServers": "localhost:9092",
+    "GroupId": "cotacoes-processor-group"
+  },
+  "AllowedHosts": "*"
+}
+```
+Após executar o projeto executar o doker relacionado ao tópico de "Testes Kafka"
+para poder testar o envio de mensagens para o consulmer.
+
+### ItauChallenge.Api
+
+Para executar a API é recomendado o uso de uma execução como desenvolvedor, para que possa utilizar a UI de testes do 
+Swagger. Mas antes é necessario configurar como no tópico anterior o `**appsettings.json`**. EX:
+
+```bash
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "ConnectionStrings": {
+    "DefaultBdConnection": "Server=localhost;Database=itau_challenge_db;User=root;Password=Lea@2023!;"
+  },
+  "AllowedHosts": "*"
+}
+```

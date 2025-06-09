@@ -11,5 +11,7 @@ namespace ItauChallenge.Core.Interfaces
     {
         public Task<Boolean> ExisteAsync(int ativoId, DateTime dataHora);
         public Task<Cotacao> AdicionarAsync(Cotacao cotacao);
+        public Task<Cotacao> GetUltimaPorAtivoIdAsync(int ativoId);
+
     }
 }

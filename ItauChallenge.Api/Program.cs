@@ -35,8 +35,8 @@ builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
 builder.Services.AddScoped<ICotacaoService, CotacaoService>();
 builder.Services.AddScoped<IPortfolioService, PortfolioService>();
-builder.Services.AddScoped<IOperacoesRepository, OperacoesRepository>();
 builder.Services.AddScoped<IClienteService, ClienteService>();
+builder.Services.AddScoped<ICorretoraService, CorretoraService>();
 
 var app = builder.Build();
 

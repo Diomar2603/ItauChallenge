@@ -1,5 +1,6 @@
 ﻿using ItauChallenge.Core.Entities;
 using ItauChallenge.Core.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,14 @@ namespace ItauChallenge.Infrastructure.Data.Repositories
                 exists = false;
 
             return Task.FromResult(exists);
+        }
+
+        public async Task<Cotacao> GetUltimaPorAtivoIdAsync(int ativoId)
+        {
+            return await _context.Cotacoes
+                         .Where(c => c.AtivoId == ativoId)
+                         .OrderByDescending(c => c.DataHora) 
+                         .FirstOrDefaultAsync(); 
         }
     }
 }

@@ -8,7 +8,10 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -28,10 +31,12 @@ builder.Services.AddScoped<ICotacoesRepository, CotacoesRepository>();
 builder.Services.AddScoped<IOperacoesRepository, OperacoesRepository>();
 builder.Services.AddScoped<IPosicoesRepository, PosicoesRepository>();
 builder.Services.AddScoped<IAtivosRepository, AtivosRepository>();
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 
 builder.Services.AddScoped<ICotacaoService, CotacaoService>();
 builder.Services.AddScoped<IPortfolioService, PortfolioService>();
 builder.Services.AddScoped<IOperacoesRepository, OperacoesRepository>();
+builder.Services.AddScoped<IClienteService, ClienteService>();
 
 var app = builder.Build();
 

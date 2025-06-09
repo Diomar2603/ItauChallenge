@@ -18,6 +18,11 @@ namespace ItauChallenge.Infrastructure.Data.Repositories
             _context = context;
         }
 
+        public async Task<IEnumerable<Posicao>> GetAllAsync()
+        {
+            return await _context.Posicoes.ToListAsync();
+        }
+
         public async Task<IEnumerable<Posicao>> GetByIdUsuarioAsync(int userId)
         {
             return await _context.Posicoes

@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace ItauChallenge.Core.Interfaces
 {
-    public interface IPosicoesRepository
+    public interface IUsuarioRepository
     {
-        public Task<IEnumerable<Posicao>> GetByIdUsuarioAsync(int userId);
-        public Task<IEnumerable<Posicao>> GetAllAsync();
+        public Task<IEnumerable<Usuario>> GetAllAsync();
     }
 }

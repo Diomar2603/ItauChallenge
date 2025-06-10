@@ -1,4 +1,4 @@
-# Desafio Técnico Itaú Unibanco - Leandro Diomar
+# Desafio Técnico Itaú Unibanco - Leandro Diomar Gomes da Silva
 
 ## Visão Geral do Projeto
 

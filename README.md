@@ -123,7 +123,7 @@ e do banco de dados. EX:
 Após executar o projeto executar o doker relacionado ao tópico de "Testes Kafka"
 para poder testar o envio de mensagens para o consulmer.
 
-### ItauChallenge.Api
+### Executar Api
 
 Para executar a API é recomendado o uso de uma execução como desenvolvedor, para que possa utilizar a UI de testes do 
 Swagger. Mas antes é necessario configurar como no tópico anterior o `**appsettings.json`**. EX:
